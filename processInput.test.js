@@ -1,4 +1,4 @@
-const { processInput } = require("./index.js");
+const processInput = require("./processInput");
 describe("stdin", () => {
   describe("argument #", () => {
     test("Errors on 1 input", () => {
@@ -8,7 +8,11 @@ describe("stdin", () => {
       expect(() => processInput("a\nb")).toThrow("Arguments invalid");
     });
     test("Success case", () => {
-      expect(processInput("8 8\n1 2 E\nMMLMRMMRRMML")).toBeTrue();
+      expect(processInput("8 8\n1 2 E\nMMLMRMMRRMML")).toEqual({
+        commands: ["M", "M", "L", "M", "R", "M", "M", "R", "R", "M", "M", "L"],
+        grid: [8, 8],
+        position: [1, 2, 1],
+      });
     });
   });
   describe("bound format", () => {
