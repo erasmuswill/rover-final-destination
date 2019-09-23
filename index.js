@@ -8,6 +8,7 @@ stdin.setEncoding("utf8");
 stdin.on("data", line => (data += line));
 stdin.on("end", () => {
   const { grid, position, commands } = processInput(data);
+  console.log(toString(commands.reduce(move, position)));
 });
 stdin.on("error", console.error);
 const toString = ([x, y, angle]) =>
