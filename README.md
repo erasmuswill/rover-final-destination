@@ -13,3 +13,9 @@ To predict the location of the rover, pass the paramaters in to stdin. E.g.
 ## Testing
 
 To run all tests, run `yarn test`
+
+## Overview
+
+I designed the code to be as efficient and minimalistic as possible. There are
+multiple unit tests for all the critical functions to ensure correct functioning
+even after later modifications.
